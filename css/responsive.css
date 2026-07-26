@@ -1,0 +1,74 @@
+/* =========================================================
+   responsive.css — mobile / tablet / laptop / ultra-wide
+   ========================================================= */
+
+/* Ultra-wide */
+@media (min-width: 1600px) {
+  :root { --container: 1320px; }
+}
+
+/* Laptop */
+@media (max-width: 1080px) {
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-image { order: -1; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tablet */
+@media (max-width: 860px) {
+  .section { padding: 96px 0; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .nav-links {
+    position: fixed;
+    top: 0; right: -100%;
+    width: min(80vw, 320px); height: 100vh;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    padding: 40px;
+    transition: right .4s var(--ease);
+    z-index: 400;
+  }
+  .nav-links.open { right: 0; }
+  .nav-link { width: 100%; padding: 14px 16px; font-size: 1rem; }
+  .hamburger { display: flex; }
+}
+
+/* Mobile nav backdrop */
+.nav-backdrop {
+  position: fixed; inset: 0; z-index: 350;
+  background: rgba(0,0,0,.45);
+  opacity: 0; visibility: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+.nav-backdrop.open { opacity: 1; visibility: visible; }
+
+/* Mobile */
+@media (max-width: 620px) {
+  .container { padding: 0 20px; }
+  .nav-inner { padding: 14px 20px; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { justify-content: center; }
+  .hero-socials { justify-content: flex-start; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .timeline { padding-left: 24px; }
+  .timeline-dot { left: -24px; }
+  .timeline-card { padding: 22px; }
+  .timeline-head { flex-direction: column; gap: 6px; }
+  .modal { padding: 28px 22px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .back-to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; }
+  .nav-actions .btn-sm { display: none; }
+}
+
+@media (max-width: 400px) {
+  .hero-name { font-size: 2.2rem; }
+}

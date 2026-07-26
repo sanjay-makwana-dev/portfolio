@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjay Makwana — .NET Full Stack Developer</title>
+<meta name="description" content="Sanjay Makwana is a .NET Full Stack Developer with 3+ years of experience building scalable web applications using ASP.NET Core, Blazor, C#, and SQL Server for ERP, healthcare, and business management systems.">
+<meta name="keywords" content="Sanjay Makwana, .NET Developer, Full Stack Developer, ASP.NET Core, Blazor, C#, SQL Server, Rajkot, Gujarat">
+<meta name="author" content="Sanjay Makwana">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sanjaymakwana.dev/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sanjay Makwana — .NET Full Stack Developer">
+<meta property="og:description" content=".NET Full Stack Developer with 3+ years of experience in ASP.NET Core, Blazor, C# and SQL Server, building ERP, healthcare and business management systems.">
+<meta property="og:url" content="https://sanjaymakwana.dev/">
+<meta property="og:image" content="assets/images/og-cover.png">
+<meta property="og:site_name" content="Sanjay Makwana Portfolio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sanjay Makwana — .NET Full Stack Developer">
+<meta name="twitter:description" content=".NET Full Stack Developer with 3+ years of experience in ASP.NET Core, Blazor, C# and SQL Server.">
+<meta name="twitter:image" content="assets/images/og-cover.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%233B82F6'/%3E%3Ctext x='50' y='68' font-family='Manrope,Arial' font-weight='800' font-size='54' fill='white' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sanjay Makwana",
+  "jobTitle": ".NET Full Stack Developer",
+  "email": "mailto:sanjaymakwana.work@gmail.com",
+  "telephone": "+91-91576-39633",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rajkot",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  },
+  "url": "https://sanjaymakwana.dev/",
+  "sameAs": [
+    "https://github.com/sanjay-makwana-dev",
+    "https://linkedin.com/in/sanjaymakwans"
+  ],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Kamani Science College, Amreli"
+  },
+  "knowsAbout": ["C#", "ASP.NET Core", "Blazor", "SQL Server", "MySQL", "Clean Architecture", "REST APIs"]
+}
+</script>
+</head>
+<body>
+
+<!-- ================= LOADING SCREEN ================= -->
+<div id="loader" class="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-mark">SM</div>
+    <div class="loader-line"><span id="loaderTyped"></span><span class="loader-cursor">_</span></div>
+    <div class="loader-bar"><span id="loaderProgress"></span></div>
+  </div>
+</div>
+
+<!-- Theme transition overlay (Telegram-style circular reveal) -->
+<canvas id="themeReveal" class="theme-reveal"></canvas>
+
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <nav class="nav-inner">
+    <a href="#home" class="nav-logo" data-magnetic>SM<span class="dot">.</span></a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" type="button">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+      <a href="assets/resume.pdf" class="btn btn-sm btn-primary" download data-magnetic>Resume</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
+  <div class="container hero-inner">
+    <p class="eyebrow reveal-up">Rajkot, Gujarat · Available for opportunities</p>
+    <h1 class="hero-name reveal-up" style="--d:0.05s">Sanjay Makwana</h1>
+    <h2 class="hero-title reveal-up" style="--d:0.12s">
+      <span id="typedTitle" class="typed"></span><span class="type-cursor">|</span>
+    </h2>
+    <p class="hero-desc reveal-up" style="--d:0.2s">
+      .NET Full Stack Developer with 3+ years of experience building scalable web applications
+      with ASP.NET Core, Blazor, C# and SQL Server — shipping ERP, healthcare and business
+      management systems with clean, maintainable architecture.
+    </p>
+    <div class="hero-cta reveal-up" style="--d:0.28s">
+      <a href="assets/resume.pdf" class="btn btn-primary" download data-magnetic>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16"/></svg>
+        Download Resume
+      </a>
+      <a href="#contact" class="btn btn-outline" data-magnetic>Contact Me</a>
+    </div>
+    <div class="hero-socials reveal-up" style="--d:0.34s">
+      <a href="mailto:sanjaymakwana.work@gmail.com" aria-label="Email" data-magnetic>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+      <a href="https://github.com/sanjay-makwana-dev" target="_blank" rel="noopener" aria-label="GitHub" data-magnetic>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.5c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.31-1.27-1.66-1.27-1.66-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 015.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.31-5.18 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.79.55A10.53 10.53 0 0023.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/sanjaymakwans" target="_blank" rel="noopener" aria-label="LinkedIn" data-magnetic>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+      </a>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal-up">About</p>
+    <h2 class="section-title reveal-up">Backend-minded engineer, product-minded builder</h2>
+
+    <div class="about-grid">
+      <div class="about-text reveal-up">
+        <p>
+          I'm a .NET Full Stack Developer with over 3 years of experience designing and building
+          scalable web applications using ASP.NET Core, Blazor, C# and SQL Server. Most of my work
+          has centered on ERP, healthcare and business management systems — products where data
+          integrity, clean architecture and long-term maintainability matter as much as the
+          feature itself.
+        </p>
+        <p>
+          I've shipped everything from HL7/FHIR-compliant healthcare APIs to multi-tenant
+          accounting platforms with real-time features, working closely with international
+          clients and small, focused teams to take products from first API to production.
+        </p>
+      </div>
+
+      <div class="about-image reveal-up">
+        <div class="profile-frame">
+          <div class="profile-placeholder">
+            <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <span class="profile-badge">Available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card reveal-up">
+        <span class="stat-number" data-count="3" data-suffix="+">0</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-card reveal-up">
+        <span class="stat-number" data-count="5" data-suffix="+">0</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-card reveal-up">
+        <span class="stat-number" data-count="12" data-suffix="+">0</span>
+        <span class="stat-label">Technologies</span>
+      </div>
+      <div class="stat-card reveal-up">
+        <span class="stat-number" data-count="2" data-suffix="">0</span>
+        <span class="stat-label">Companies</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal-up">Career</p>
+    <h2 class="section-title reveal-up">Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <h3>Sr. .NET Full Stack Developer</h3>
+              <p class="timeline-company">Venus Softop · Rajkot, Gujarat</p>
+            </div>
+            <span class="timeline-date">Jan 2025 — Apr 2026</span>
+          </div>
+          <ul class="timeline-list">
+            <li>Worked on enterprise healthcare and HR management products.</li>
+            <li>Developed and maintained scalable REST APIs and backend modules.</li>
+            <li>Contributed to performance optimization and system improvements.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">ASP.NET Core</span><span class="tag">Blazor</span>
+            <span class="tag">SQL Server</span><span class="tag">Firebird</span>
+            <span class="tag">Git</span><span class="tag">Jira</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <h3>.NET Developer</h3>
+              <p class="timeline-company">TeamOpine Solutions · Surat, Gujarat</p>
+            </div>
+            <span class="timeline-date">Feb 2023 — Sep 2024</span>
+          </div>
+          <ul class="timeline-list">
+            <li>Worked on multiple international client and internal business applications.</li>
+            <li>Developed web applications using ASP.NET Core, Blazor, and Clean Architecture.</li>
+            <li>Collaborated with clients and team members on feature development and issue resolution.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">ASP.NET Core</span><span class="tag">Blazor</span>
+            <span class="tag">SQL Server</span><span class="tag">MySQL</span>
+            <span class="tag">MudBlazor</span><span class="tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal-up">Selected Work</p>
+    <h2 class="section-title reveal-up">Projects</h2>
+
+    <div class="projects-grid">
+
+      <article class="project-card reveal-up" tabindex="0"
+        data-title="IDEAS — IVF Healthcare System"
+        data-desc="An international IVF healthcare management product. Developed and enhanced REST APIs using ASP.NET Core 3.1, implementing HL7 and FHIR healthcare data standards for interoperability."
+        data-role="Backend Developer"
+        data-stack="ASP.NET Core 3.1 Web API, C#, SQL Server, HL7, FHIR"
+        data-features="REST API development · HL7/FHIR standards compliance · Backend feature development · System improvements">
+        <div class="project-top">
+          <span class="project-index">01</span>
+          <div class="project-links"><span class="tag tag-mono">HL7 / FHIR</span></div>
+        </div>
+        <h3>IDEAS — IVF Healthcare System</h3>
+        <p>International IVF healthcare management product with REST APIs following HL7 and FHIR healthcare standards.</p>
+        <div class="tag-row">
+          <span class="tag">ASP.NET Core</span><span class="tag">C#</span><span class="tag">SQL Server</span>
+        </div>
+        <button class="project-details-btn" type="button">View Details →</button>
+      </article>
+
+      <article class="project-card reveal-up" tabindex="0"
+        data-title="VSOPL — HR Management System"
+        data-desc="HR management modules covering employees, leaves and salary management, including salary receipt generation and reporting functionality, built on reusable Blazor components."
+        data-role="Full Stack Developer"
+        data-stack="Blazor, ASP.NET Core Web API, C#, Repository Pattern, Firebird, SQL Server, Git"
+        data-features="Employee & leave management · Salary receipts & reporting · Reusable Blazor components · Database operations & maintenance">
+        <div class="project-top">
+          <span class="project-index">02</span>
+          <div class="project-links"><span class="tag tag-mono">HR / ERP</span></div>
+        </div>
+        <h3>VSOPL HR Management System</h3>
+        <p>HR management modules for employees, leaves and salary — with reusable Blazor components and backend APIs.</p>
+        <div class="tag-row">
+          <span class="tag">Blazor</span><span class="tag">Firebird</span><span class="tag">Repository Pattern</span>
+        </div>
+        <button class="project-details-btn" type="button">View Details →</button>
+      </article>
+
+      <article class="project-card reveal-up" tabindex="0"
+        data-title="Wikidoc — Document Management System"
+        data-desc="A Netherlands-based document management system. Developed subscription management functionality and integrated a payment gateway for premium plan handling, improving document access and user management workflows."
+        data-role="Full Stack Developer"
+        data-stack="Blazor Server, C#, SQL Server, Payment Gateway Integration"
+        data-features="Subscription management · Payment gateway integration · Document access control · User management workflows">
+        <div class="project-top">
+          <span class="project-index">03</span>
+          <div class="project-links"><span class="tag tag-mono">SaaS</span></div>
+        </div>
+        <h3>Wikidoc Document Management System</h3>
+        <p>Netherlands-based DMS with subscription management and integrated payment gateway for premium plans.</p>
+        <div class="tag-row">
+          <span class="tag">Blazor Server</span><span class="tag">SQL Server</span><span class="tag">Payments</span>
+        </div>
+        <button class="project-details-btn" type="button">View Details →</button>
+      </article>
+
+      <article class="project-card reveal-up" tabindex="0"
+        data-title="MITS — Minute/Issue Tracking System"
+        data-desc="A government-based issue tracking system used for managing and tracking minute-level operational issues and tasks, with direct client communication for requirement handling and coordination across a 3-person team."
+        data-role="Developer"
+        data-stack="ASP.NET Core MVC, C#, SQL Server, jQuery, AJAX, SSRS"
+        data-features="Minute-level issue tracking · Direct client requirement handling · SSRS reporting · Team coordination (3 members)">
+        <div class="project-top">
+          <span class="project-index">04</span>
+          <div class="project-links"><span class="tag tag-mono">GovTech</span></div>
+        </div>
+        <h3>MITS Issue Tracking System</h3>
+        <p>Government issue-tracking system for managing minute-level operational issues and tasks, with SSRS reporting.</p>
+        <div class="tag-row">
+          <span class="tag">ASP.NET MVC</span><span class="tag">jQuery</span><span class="tag">SSRS</span>
+        </div>
+        <button class="project-details-btn" type="button">View Details →</button>
+      </article>
+
+      <article class="project-card reveal-up" tabindex="0"
+        data-title="MBooks — Accounting & ERP System"
+        data-desc="A multi-tenant accounting and ERP system designed and developed from scratch, implementing Clean Architecture and a reusable module structure, with real-time functionality powered by SignalR across multiple database systems."
+        data-role="Full Stack Developer"
+        data-stack="Blazor, MudBlazor, ASP.NET Core API, C#, SignalR, MySQL, SQL Server, Clean Architecture"
+        data-features="Multi-tenant architecture · Real-time updates via SignalR · Clean Architecture module structure · MySQL & SQL Server support">
+        <div class="project-top">
+          <span class="project-index">05</span>
+          <div class="project-links"><span class="tag tag-mono">Multi-tenant</span></div>
+        </div>
+        <h3>MBooks Accounting &amp; ERP System</h3>
+        <p>Multi-tenant accounting and ERP system built from scratch with Clean Architecture and real-time SignalR features.</p>
+        <div class="tag-row">
+          <span class="tag">Blazor</span><span class="tag">SignalR</span><span class="tag">Clean Architecture</span>
+        </div>
+        <button class="project-details-btn" type="button">View Details →</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Project details modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <span class="modal-eyebrow" id="modalRole"></span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <div class="modal-block">
+      <h4>Tech Stack</h4>
+      <div class="tag-row" id="modalStack"></div>
+    </div>
+    <div class="modal-block">
+      <h4>Key Features</h4>
+      <ul id="modalFeatures"></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal-up">Toolbox</p>
+    <h2 class="section-title reveal-up">Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-group reveal-up">
+        <h3>Programming</h3>
+        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>C#</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="80"><div class="skill-bar-head"><span>JavaScript</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal-up">
+        <h3>Frontend</h3>
+        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>Blazor</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="70"><div class="skill-bar-head"><span>Angular</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="65"><div class="skill-bar-head"><span>MudBlazor</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal-up">
+        <h3>Backend</h3>
+        <div class="skill-bar" data-level="92"><div class="skill-bar-head"><span>.NET Core / MVC</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="88"><div class="skill-bar-head"><span>REST APIs</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal-up">
+        <h3>Database</h3>
+        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>SQL Server</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="75"><div class="skill-bar-head"><span>MySQL</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="65"><div class="skill-bar-head"><span>Firebird</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal-up">
+        <h3>Architecture</h3>
+        <div class="skill-bar" data-level="85"><div class="skill-bar-head"><span>Clean Architecture</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="82"><div class="skill-bar-head"><span>Repository Pattern</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal-up">
+        <h3>Tools &amp; Version Control</h3>
+        <div class="skill-bar" data-level="90"><div class="skill-bar-head"><span>Git / GitHub</span><span class="skill-pct">90%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar" data-level="70"><div class="skill-bar-head"><span>Vault</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+
+      <div class="skill-group reveal-up">
+        <h3>Soft Skills</h3>
+        <div class="soft-skill-pills">
+          <span class="tag">Agile &amp; Scrum</span>
+          <span class="tag">Client Communication</span>
+          <span class="tag">Team Coordination</span>
+          <span class="tag">Problem Solving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal-up">Background</p>
+    <h2 class="section-title reveal-up">Education</h2>
+
+    <div class="timeline timeline-edu">
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <h3>Bachelor of Computer Application</h3>
+              <p class="timeline-company">Kamani Science College, Amreli</p>
+            </div>
+            <span class="timeline-date">Graduated 2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section">
+  <div class="container">
+    <p class="section-eyebrow reveal-up">Get in touch</p>
+    <h2 class="section-title reveal-up">Contact</h2>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal-up">
+        <a class="contact-row" href="mailto:sanjaymakwana.work@gmail.com" data-magnetic>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><span>Email</span><p>sanjaymakwana.work@gmail.com</p></div>
+        </a>
+        <a class="contact-row" href="tel:+919157639633" data-magnetic>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006.2 6.2l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          <div><span>Phone</span><p>+91 91576 39633</p></div>
+        </a>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><span>Location</span><p>Rajkot, Gujarat, India</p></div>
+        </div>
+        <a class="contact-row" href="https://linkedin.com/in/sanjaymakwans" target="_blank" rel="noopener" data-magnetic>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+          <div><span>LinkedIn</span><p>linkedin.com/in/sanjaymakwans</p></div>
+        </a>
+        <a class="contact-row" href="https://github.com/sanjay-makwana-dev" target="_blank" rel="noopener" data-magnetic>
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.5c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.31-1.27-1.66-1.27-1.66-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 015.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.31-5.18 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.79.55A10.53 10.53 0 0023.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+          <div><span>GitHub</span><p>github.com/sanjaymakwana</p></div>
+        </a>
+        <a href="assets/resume.pdf" class="btn btn-primary" download data-magnetic style="margin-top:.5rem;">
+          Download Resume
+        </a>
+      </div>
+
+      <form class="contact-form reveal-up" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-magnetic>
+          <span class="btn-text">Send Message</span>
+        </button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>&copy; <span id="year"></span> Sanjay Makwana. All rights reserved.</span>
+    <div class="footer-socials">
+      <a href="mailto:sanjaymakwana.work@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+      <a href="https://github.com/sanjay-makwana-dev" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.73.5.98 5.24.98 11.5c0 5.02 3.26 9.28 7.78 10.78.57.1.78-.25.78-.55v-2.14c-3.16.69-3.83-1.36-3.83-1.36-.52-1.31-1.27-1.66-1.27-1.66-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 015.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.31-5.18 5.59.41.35.77 1.04.77 2.1v3.11c0 .3.2.65.79.55A10.53 10.53 0 0023.02 11.5C23.02 5.24 18.27.5 12 .5z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/sanjaymakwans" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.11 20.45H3.56V9h3.55v11.45z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" type="button">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/theme.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

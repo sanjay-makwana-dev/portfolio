@@ -1,0 +1,72 @@
+/* =========================================================
+   animations.css — keyframes + scroll reveal states
+   ========================================================= */
+
+@keyframes blink { 50% { opacity: 0; } }
+
+@keyframes scrollcue {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { opacity: 0; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@keyframes ripple {
+  to { transform: scale(3); opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-16px) translateX(8px); }
+}
+
+/* ---- Scroll reveal base states ---- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  transition-delay: var(--d, 0s);
+}
+.reveal-up.in-view { opacity: 1; transform: translateY(0); }
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(.94);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+.reveal-scale.in-view { opacity: 1; transform: scale(1); }
+
+/* Stagger children of a grid/row automatically via inline --d set in JS,
+   fallback nth-child stagger for elements without JS-computed delay */
+.projects-grid .project-card:nth-child(1) { --d: 0s; }
+.projects-grid .project-card:nth-child(2) { --d: .06s; }
+.projects-grid .project-card:nth-child(3) { --d: .12s; }
+.projects-grid .project-card:nth-child(4) { --d: .18s; }
+.projects-grid .project-card:nth-child(5) { --d: .24s; }
+
+.stats-grid .stat-card:nth-child(1) { --d: 0s; }
+.stats-grid .stat-card:nth-child(2) { --d: .08s; }
+.stats-grid .stat-card:nth-child(3) { --d: .16s; }
+.stats-grid .stat-card:nth-child(4) { --d: .24s; }
+
+.skills-grid .skill-group:nth-child(1) { --d: 0s; }
+.skills-grid .skill-group:nth-child(2) { --d: .06s; }
+.skills-grid .skill-group:nth-child(3) { --d: .12s; }
+.skills-grid .skill-group:nth-child(4) { --d: .18s; }
+.skills-grid .skill-group:nth-child(5) { --d: .24s; }
+.skills-grid .skill-group:nth-child(6) { --d: .3s; }
+.skills-grid .skill-group:nth-child(7) { --d: .36s; }
+
+/* Magnetic buttons: transform is applied inline via JS translate3d */
+[data-magnetic] { transition: transform .2s ease-out; will-change: transform; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-up, .reveal-scale { opacity: 1; transform: none; }
+}
